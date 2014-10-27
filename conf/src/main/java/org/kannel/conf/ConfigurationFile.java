@@ -18,7 +18,7 @@ import org.apache.commons.beanutils.PropertyUtils;
  * Configuration file holds all configurations and does reading and
  * writing of the configuration file.
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class ConfigurationFile
 {

@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 /**
  * The returned status of an SMS sent to the smsbox.
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class SendStatus
 {

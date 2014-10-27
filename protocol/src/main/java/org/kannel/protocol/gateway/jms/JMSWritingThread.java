@@ -9,7 +9,7 @@ import java.util.LinkedList;
  * This class reads packets from a JMS Queue and redirects them to a Kannel link
  *
  * @author Oscar Medina Duarte
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class JMSWritingThread 
     extends KjWritingThread

@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * Abstract message. Used by Dlr and Sms.
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public abstract class Msg
 {

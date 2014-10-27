@@ -7,7 +7,7 @@ import org.kannel.admin.xml.GatewayDocument;
 /**
  * Status of kannel, parsed from status.xml admin query.
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class Status
 {

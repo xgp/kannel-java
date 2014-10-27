@@ -8,7 +8,8 @@ import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.kannel.sms.Sms;
 import org.kannel.sms.UrlTemplate;
 import org.kannel.xml.*;
@@ -16,11 +17,11 @@ import org.kannel.xml.*;
 /**
  * A sample servlet for receiving SMSs from Kannel.
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class SmsServlet extends KannelServlet
 {
-    private static Logger logger = Logger.getLogger(SmsServlet.class);
+    private static Logger logger = LoggerFactory.getLogger(SmsServlet.class);
 
     public void service(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException

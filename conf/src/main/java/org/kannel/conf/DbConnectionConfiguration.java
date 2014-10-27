@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * <db>-connection configuration
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class DbConnectionConfiguration
     extends Configuration

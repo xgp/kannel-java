@@ -13,7 +13,7 @@ import org.kannel.protocol.kbinds.KannelBinding;
 /**
  * Base class for creating Kannel gateways.
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class KannelGateway
     extends Thread

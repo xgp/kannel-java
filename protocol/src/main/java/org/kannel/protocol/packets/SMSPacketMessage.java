@@ -8,7 +8,7 @@ import java.io.Serializable;
  * Kannel's protocol sms_packet message.
  *
  * @author Oscar Medina Duarte
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class SMSPacketMessage
     extends BasicPacket

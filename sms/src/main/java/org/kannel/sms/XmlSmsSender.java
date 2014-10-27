@@ -10,7 +10,7 @@ import org.kannel.xml.*;
 /**
  * Send SMS to the smsbox by POSTing XML via HTTP.
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class XmlSmsSender
     extends SmsSender

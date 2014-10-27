@@ -5,7 +5,7 @@ import java.net.URL;
 /**
  * smpp smsc configuration
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class SmppSmscConfiguration
     extends SmscConfiguration

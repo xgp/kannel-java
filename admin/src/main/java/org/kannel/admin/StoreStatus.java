@@ -5,7 +5,7 @@ import java.io.InputStream;
 /**
  * Status of kannel's store, parsed from store-status.xml admin query.
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class StoreStatus
 {

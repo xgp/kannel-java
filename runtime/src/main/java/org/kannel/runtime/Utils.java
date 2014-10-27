@@ -8,7 +8,7 @@ import java.io.DataInputStream;
 /**
  * Utilities for the Box classes.
  * 
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class Utils
 {

@@ -10,7 +10,7 @@ import java.io.IOException;
  * This class reads packets from a kannel link and redirects them to a JMS Queue
  *
  * @author Oscar Medina Duarte
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class JMSReadingThread
     extends KjReadingThread

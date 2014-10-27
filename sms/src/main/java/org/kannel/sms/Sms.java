@@ -9,7 +9,7 @@ import java.util.Set;
 /**
  * An SMS message. This combines fields used in both sending and receiving SMS messages.
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class Sms
     extends Msg

@@ -5,7 +5,7 @@ import java.net.URL;
 /**
  * sms-service configuration
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class SmsServiceConfiguration
     extends Configuration

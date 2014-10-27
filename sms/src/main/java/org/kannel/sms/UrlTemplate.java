@@ -19,7 +19,7 @@ import java.util.Set;
  *   http://myhost.com/dlr?a=%a&from=%p&to=%P%t=%t&i=%i&d=%d&myId=134719
  * Also creates a parser for sms and dlr requests to this URL.
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class UrlTemplate
 {

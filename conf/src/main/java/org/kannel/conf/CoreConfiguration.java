@@ -5,7 +5,7 @@ import java.net.URL;
 /**
  * core configuration
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class CoreConfiguration
     extends Configuration

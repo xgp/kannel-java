@@ -13,16 +13,17 @@ import java.util.Map.Entry;
 import java.util.Properties;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.PropertyUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Base class for configurations.
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public abstract class Configuration
 {
-    private static final Logger logger = Logger.getLogger(Configuration.class);
+    private static final Logger logger = LoggerFactory.getLogger(Configuration.class);
 
     public abstract String[] getPropertyOrder();
     public abstract String[] getMandatoryProps();

@@ -5,7 +5,7 @@ import java.net.URL;
 /**
  * wapbox configuration
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class WapboxConfiguration
     extends Configuration

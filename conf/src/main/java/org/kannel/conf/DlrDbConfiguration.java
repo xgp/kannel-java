@@ -5,7 +5,7 @@ import java.net.URL;
 /**
  * dlr-db configuration
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class DlrDbConfiguration
     extends Configuration

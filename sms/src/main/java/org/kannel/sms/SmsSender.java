@@ -6,7 +6,7 @@ import java.nio.charset.Charset;
 /**
  * Base class for sending SMS messages to the smsbox.
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public abstract class SmsSender
 {

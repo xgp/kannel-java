@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Abstract class for all Box implementations.
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public abstract class Box
 {

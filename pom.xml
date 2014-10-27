@@ -15,60 +15,24 @@
   </prerequisites>
 
   <scm>
-    <connection>scm:git:http://github.com/garthpatil/kannel-java.git</connection>
-    <developerConnection>scm:git:git://github.com/garthpatil/kannel-java.git</developerConnection>
+    <connection>scm:git:http://github.com/garthp/kannel-java.git</connection>
+    <developerConnection>scm:git:git://github.com/garthp/kannel-java.git</developerConnection>
     <tag>HEAD</tag>
-    <url>http://github.com/garthpatil/kannel-java</url>
+    <url>http://github.com/garthp/kannel-java</url>
   </scm>
 
   <issueManagement>
     <system>GitHub</system>
-    <url>http://github.com/garthpatil/kannel-java/issues</url>
+    <url>http://github.com/garthp/kannel-java/issues</url>
   </issueManagement>
 
   <licenses>
-  <!--
-The MIT License
-
-Copyright (c) 2010 Garth Patil
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-  -->
+    <license>
+      <name>MIT License</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+      <distribution>repo</distribution>
+    </license>
   </licenses>
-
-  <mailingLists>
-  <!--
-users@kannel.org
-  -->
-  </mailingLists>
-
-  <developers>
-    <developer>
-      <id>garthpatil</id>
-      <name>Garth Patil</name>
-      <email>garthpatil@gmail.com</email>
-      <roles>
-        <role>Developer</role>
-      </roles>
-      <timezone>-8</timezone>
-    </developer>
-  </developers>
 
   <build>
     <plugins>
@@ -83,19 +47,6 @@ users@kannel.org
     </plugins>
   </build>
 
-  <repositories>
-    <!-- JBoss repository provides JMS and Servlet JARs -->
-    <repository>
-      <id>jboss-public-repository-group</id>
-      <name>JBoss Public Maven Repository Group</name>
-      <url>https://repository.jboss.org/nexus/content/groups/public-jboss</url>
-      <layout>default</layout>
-    </repository>
-  </repositories>
-
-  <pluginRepositories>
-  </pluginRepositories>
-
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -105,9 +56,9 @@ users@kannel.org
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>${log4j.version}</version>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
     </dependency>
   </dependencies>
 
@@ -127,7 +78,7 @@ users@kannel.org
 
   <properties>
     <junit.version>4.4</junit.version>
-    <log4j.version>1.2.16</log4j.version>
+    <slf4j.version>1.7.7</slf4j.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 

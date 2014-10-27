@@ -16,7 +16,7 @@ import java.util.Set;
 /**
  * Send SMS to the smsbox using the HTTP GET method and URL parameters.
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class HttpSmsSender
     extends SmsSender

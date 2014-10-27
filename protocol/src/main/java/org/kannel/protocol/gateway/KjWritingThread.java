@@ -10,7 +10,7 @@ import java.util.LinkedList;
  * This class redirects to a Kannel link.
  *
  * @author Oscar Medina Duarte
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class KjWritingThread
     extends Thread

@@ -5,7 +5,7 @@ import java.net.URL;
 /**
  * smsbox-route configuration
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class SmsboxRouteConfiguration
     extends Configuration

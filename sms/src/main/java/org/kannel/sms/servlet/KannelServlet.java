@@ -13,16 +13,17 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Abstract servlet for receiving requests from Kannel
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public abstract class KannelServlet extends HttpServlet
 {
-    private static Logger logger = Logger.getLogger(KannelServlet.class);
+    private static Logger logger = LoggerFactory.getLogger(KannelServlet.class);
 
     protected Observable obs;
 

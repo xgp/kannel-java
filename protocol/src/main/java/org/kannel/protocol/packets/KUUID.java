@@ -7,7 +7,7 @@ import java.util.UUID;
  * Contains a Universal Unique IDentifier 
  *
  * @author     Oscar Medina Duarte
- * @author     Garth Patil <garthpatil@gmail.com>
+ * @author     garth
  * @created    April 4, 2005
  */
 public class KUUID

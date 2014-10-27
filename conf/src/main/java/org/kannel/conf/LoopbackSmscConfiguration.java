@@ -5,7 +5,7 @@ import java.net.URL;
 /**
  * loopback smsc configuration
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class LoopbackSmscConfiguration
     extends SmscConfiguration

@@ -5,7 +5,7 @@ import java.net.URL;
 /**
  * fake smsc configuration
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class FakeSmscConfiguration
     extends SmscConfiguration

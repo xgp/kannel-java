@@ -11,7 +11,7 @@ import java.net.URLConnection;
 /**
  * Implementation of KannelAdmin using Kannel's HTTP administration interface
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class HttpKannelAdmin
     implements KannelAdmin
@@ -315,7 +315,6 @@ public class HttpKannelAdmin
      */
     public static void main(String[] argv)
     {
-	org.apache.log4j.BasicConfigurator.configure();
 	if (argv.length < 3) {
 	    System.err.println("usage: HttpKannelAdmin <host> <password> <method> <opt:param>");
 	    System.exit(1);

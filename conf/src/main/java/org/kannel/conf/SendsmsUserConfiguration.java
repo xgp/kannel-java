@@ -5,7 +5,7 @@ import java.net.URL;
 /**
  * sendsms-user configuration
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class SendsmsUserConfiguration
     extends Configuration

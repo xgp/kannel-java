@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * BearerBox runtime control.
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class BearerBox
     extends Box

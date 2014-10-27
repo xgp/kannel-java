@@ -25,7 +25,7 @@ import org.kannel.protocol.tools.DataTypesTools;
  * rate.
  *
  * @author Oscar Medina Duarte
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class KannelBinding
 {

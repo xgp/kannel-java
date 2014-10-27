@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * smsc configuration
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class SmscConfiguration
     extends Configuration

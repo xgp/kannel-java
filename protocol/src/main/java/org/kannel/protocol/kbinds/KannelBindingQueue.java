@@ -18,7 +18,7 @@ import org.kannel.protocol.packets.SMSPacketMessage;
  * An extension to KannelBinding that uses BlockingQueues for reading a writing, and
  * exposes those queues to the user.
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class KannelBindingQueue
     extends KannelBinding

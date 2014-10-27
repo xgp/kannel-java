@@ -3,7 +3,7 @@ package org.kannel.admin;
 /**
  * Interface to Kannel administration
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public interface KannelAdmin
 {

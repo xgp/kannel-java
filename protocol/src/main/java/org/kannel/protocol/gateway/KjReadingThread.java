@@ -11,7 +11,7 @@ import java.io.IOException;
  * may override onAck, onAdmin, onHeartbeat, onSms and onWdp.
  *
  * @author Oscar Medina Duarte
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class KjReadingThread
     extends Thread

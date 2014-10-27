@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * A delivery report (DLR).
  *
- * @author Garth Patil <garthpatil@gmail.com>
+ * @author garth
  */
 public class Dlr
     extends Msg

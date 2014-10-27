@@ -55,8 +55,8 @@
 
   <properties>
     <!-- 3rd Party library dependency versions -->
-    <xmlbeans-maven-plugin.version>2.2.0</xmlbeans-maven-plugin.version>
-    <xmlbeans.version>2.2.0</xmlbeans.version>
+    <xmlbeans-maven-plugin.version>2.3.3</xmlbeans-maven-plugin.version>
+    <xmlbeans.version>2.6.0</xmlbeans.version>
   </properties>
 
 </project>
