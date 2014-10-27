@@ -22,4 +22,4 @@ Java libraries for building applications with the Kannel open source SMS gateway
 
     mvn install
 
-The Kannel name is copyright 2001-2010 The Kannel Group. This project is unaffiliated with them.
+The Kannel name is copyright 2001-2014 The Kannel Group. This project is unaffiliated with them.
