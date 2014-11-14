@@ -15,15 +15,15 @@
   </prerequisites>
 
   <scm>
-    <connection>scm:git:http://github.com/garthp/kannel-java.git</connection>
-    <developerConnection>scm:git:git://github.com/garthp/kannel-java.git</developerConnection>
+    <connection>scm:git:http://github.com/xgp/kannel-java.git</connection>
+    <developerConnection>scm:git:git://github.com/xgp/kannel-java.git</developerConnection>
     <tag>HEAD</tag>
-    <url>http://github.com/garthp/kannel-java</url>
+    <url>http://github.com/xgp/kannel-java</url>
   </scm>
 
   <issueManagement>
     <system>GitHub</system>
-    <url>http://github.com/garthp/kannel-java/issues</url>
+    <url>http://github.com/xgp/kannel-java/issues</url>
   </issueManagement>
 
   <licenses>
