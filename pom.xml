@@ -11,8 +11,16 @@
   <name>Kannel Java Libraries</name>
 
   <prerequisites>
-    <maven>2.0.6</maven>
+    <maven>3.3.1</maven>
   </prerequisites>
+  
+  <modules>
+    <module>admin</module>
+    <module>conf</module>
+    <module>protocol</module>
+    <module>runtime</module>
+    <module>sms</module>
+  </modules>
 
   <scm>
     <connection>scm:git:http://github.com/xgp/kannel-java.git</connection>
@@ -34,52 +42,74 @@
     </license>
   </licenses>
 
+  <properties>
+    <commons-beanutils.version>1.9.4</commons-beanutils.version>
+    <jms.version>2.0.1</jms.version>
+    <junit.version>4.13.2</junit.version>
+    <servlet-api.version>2.4</servlet-api.version>
+    <slf4j.version>1.7.30</slf4j.version>
+    <xmlbeans.version>2.6.0</xmlbeans.version>
+    <java.version>1.8</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
   <build>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+	<version>3.2.0</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.0.2</version>
+        <version>3.8.1</version>
         <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
+          <source>1.8</source>
+          <target>1.8</target>
         </configuration>
+      </plugin>
+      <plugin> <!-- pretty up the code using google java standards `mvn fmt:format` -->
+        <groupId>com.coveo</groupId>
+        <artifactId>fmt-maven-plugin</artifactId>
+        <version>2.7</version>
       </plugin>
     </plugins>
   </build>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>${slf4j.version}</version>
-    </dependency>
-  </dependencies>
-
-  <reporting>
-  </reporting>
-
-  <modules>
-    <module>admin</module>
-    <module>conf</module>
-    <module>protocol</module>
-    <module>runtime</module>
-    <module>sms</module>
-  </modules>
-
-  <profiles>
-  </profiles>
-
-  <properties>
-    <junit.version>4.4</junit.version>
-    <slf4j.version>1.7.7</slf4j.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+	<groupId>junit</groupId>
+	<artifactId>junit</artifactId>
+	<version>${junit.version}</version>
+      </dependency>
+      <dependency>
+	<groupId>org.slf4j</groupId>
+	<artifactId>slf4j-api</artifactId>
+	<version>${slf4j.version}</version>
+      </dependency>
+      <dependency>
+	<groupId>org.apache.xmlbeans</groupId>
+	<artifactId>xmlbeans</artifactId>
+	<version>${xmlbeans.version}</version>
+      </dependency>
+      <dependency>
+	<groupId>commons-beanutils</groupId>
+	<artifactId>commons-beanutils</artifactId>
+	<version>${commons-beanutils.version}</version>
+      </dependency>
+      <dependency>
+	<groupId>javax.jms</groupId>
+	<artifactId>javax.jms-api</artifactId>
+	<version>${jms.version}</version>
+      </dependency>
+      <dependency>
+	<groupId>javax.servlet</groupId>
+	<artifactId>servlet-api</artifactId>
+	<version>${servlet-api.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
 </project>

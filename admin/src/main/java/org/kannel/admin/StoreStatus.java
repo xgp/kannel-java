@@ -7,12 +7,9 @@ import java.io.InputStream;
  *
  * @author garth
  */
-public class StoreStatus
-{
+public class StoreStatus {
 
-    public static StoreStatus parse(InputStream is) throws Exception
-    {
-	return new StoreStatus();
-    }
-
+  public static StoreStatus parse(InputStream is) throws Exception {
+    return new StoreStatus();
+  }
 }

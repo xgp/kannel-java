@@ -5,30 +5,28 @@ import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.kannel.sms.Dlr;
 import org.kannel.sms.UrlTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A sample servlet for receiving DLRs from Kannel.
  *
  * @author garth
  */
-public class DlrServlet extends KannelServlet
-{
-    private static Logger logger = LoggerFactory.getLogger(DlrServlet.class);
-    
-    public void service(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException
-    {
-	UrlTemplate u = new UrlTemplate(null).all();
+public class DlrServlet extends KannelServlet {
+  private static Logger logger = LoggerFactory.getLogger(DlrServlet.class);
 
-	Dlr dlr = Dlr.buildFromTemplate(u, request.getParameterMap());
+  public void service(HttpServletRequest request, HttpServletResponse response)
+      throws ServletException, IOException {
+    UrlTemplate u = new UrlTemplate(null).all();
 
-	PrintWriter out = response.getWriter();
-	out.println("ok");
+    Dlr dlr = Dlr.buildFromTemplate(u, request.getParameterMap());
 
-	obs.notifyObservers(dlr);
-    }
+    PrintWriter out = response.getWriter();
+    out.println("ok");
+
+    obs.notifyObservers(dlr);
+  }
 }

@@ -1,12 +1,11 @@
 package org.kannel.protocol.gateway.jms;
 
-import org.kannel.protocol.packets.SMSPacketMessage;
 import java.io.Serializable;
+import org.kannel.protocol.packets.SMSPacketMessage;
 
-public interface JMSTranslator{
+public interface JMSTranslator {
 
-	public SMSPacketMessage objectToKannel(Object obj);
-	
-	public Serializable kannelToObject(SMSPacketMessage sms);
-	
+  public SMSPacketMessage objectToKannel(Object obj);
+
+  public Serializable kannelToObject(SMSPacketMessage sms);
 }

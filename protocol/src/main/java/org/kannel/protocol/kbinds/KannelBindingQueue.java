@@ -15,112 +15,106 @@ import org.kannel.protocol.packets.BasicPacket;
 import org.kannel.protocol.packets.SMSPacketMessage;
 
 /**
- * An extension to KannelBinding that uses BlockingQueues for reading a writing, and
- * exposes those queues to the user.
+ * An extension to KannelBinding that uses BlockingQueues for reading a writing, and exposes those
+ * queues to the user.
  *
  * @author garth
  */
-public class KannelBindingQueue
-    extends KannelBinding
-{
+public class KannelBindingQueue extends KannelBinding {
 
-    public KannelBindingQueue()
-    {
-	super();
+  public KannelBindingQueue() {
+    super();
+  }
+
+  public KannelBindingQueue(Properties conf)
+      throws NotEnoughPropertiesException, WrongPropertieException, IOException {
+    super();
+    init(conf);
+    readQueue = new LinkedBlockingQueue<BasicPacket>();
+    writeQueue = new LinkedBlockingQueue<BasicKannelProtocolMessage>();
+    if (this.connectedAtStart) {
+      connect();
     }
+  }
 
-    public KannelBindingQueue(Properties conf) throws NotEnoughPropertiesException,
-						      WrongPropertieException,
-						      IOException
-    {
-	super();
-	init(conf);
-	readQueue = new LinkedBlockingQueue<BasicPacket>();
-	writeQueue = new LinkedBlockingQueue<BasicKannelProtocolMessage>();
-	if (this.connectedAtStart) {
-	    connect();
-	}
+  private ReadThread reader;
+  private WriteThread writer;
+  private boolean running;
+
+  private LinkedBlockingQueue<BasicPacket> readQueue;
+  private LinkedBlockingQueue<BasicKannelProtocolMessage> writeQueue;
+
+  public BlockingQueue<BasicPacket> getReadQueue() {
+    return this.readQueue;
+  }
+
+  public BasicPacket read() throws Exception {
+    return getReadQueue().take();
+  }
+
+  public BlockingQueue<BasicKannelProtocolMessage> getWriteQueue() {
+    return this.writeQueue;
+  }
+
+  public void write(BasicKannelProtocolMessage bkpMessage) throws Exception {
+    getWriteQueue().put(bkpMessage);
+  }
+
+  public void connect() throws IOException {
+    running = true;
+    reader = new ReadThread();
+    reader.start();
+    writer = new WriteThread();
+    writer.start();
+    super.connect();
+  }
+
+  public void disconnect() throws IOException {
+    running = false;
+    super.disconnect();
+  }
+
+  /** Test main method */
+  public static void main(String argv[]) throws Exception {
+    Properties props = new Properties();
+    props.load(new FileInputStream(new File(argv[0])));
+    KannelBindingQueue kbndg = new KannelBindingQueue(props);
+    SMSPacketMessage sms = new SMSPacketMessage("12345", "6505551212", "", "test message");
+    kbndg.write(sms);
+  }
+
+  private class ReadThread extends Thread {
+    public void run() {
+      while (running) {
+        try {
+          // TODO: Make readNext timeout.
+          BasicPacket p = readNext();
+          readQueue.put(p);
+        } catch (IOException ioe) {
+          //
+        } catch (PacketParseException ppe) {
+          //
+        } catch (InterruptedException ie) {
+          //
+        }
+      }
+      System.out.println("Exiting ReadThread");
     }
+  }
 
-    private ReadThread reader;
-    private WriteThread writer;
-    private boolean running;
-
-    private LinkedBlockingQueue<BasicPacket> readQueue;
-    private LinkedBlockingQueue<BasicKannelProtocolMessage> writeQueue;
-
-    public BlockingQueue<BasicPacket> getReadQueue() { return this.readQueue; }
-
-    public BasicPacket read() throws Exception { return getReadQueue().take(); }
-
-    public BlockingQueue<BasicKannelProtocolMessage> getWriteQueue() { return this.writeQueue; }
-
-    public void write(BasicKannelProtocolMessage bkpMessage) throws Exception { getWriteQueue().put(bkpMessage); }
-
-    public void connect() throws IOException
-    {
-	running = true;
-	reader = new ReadThread();
-	reader.start();
-	writer = new WriteThread();
-	writer.start();
-	super.connect();
+  private class WriteThread extends Thread {
+    public void run() {
+      while (running) {
+        try {
+          BasicKannelProtocolMessage m = writeQueue.poll(1, TimeUnit.SECONDS);
+          if (m != null) writeNext(m);
+        } catch (IOException ioe) {
+          //
+        } catch (InterruptedException ie) {
+          //
+        }
+      }
+      System.out.println("Exiting WriteThread");
     }
-    
-    public void disconnect() throws IOException {
-	running = false;
-	super.disconnect();
-    }
-
-    /**
-     * Test main method
-     */
-    public static void main(String argv[]) throws Exception
-    {
-	Properties props = new Properties();
-	props.load(new FileInputStream(new File(argv[0])));
-	KannelBindingQueue kbndg = new KannelBindingQueue(props);
- 	SMSPacketMessage sms = new SMSPacketMessage("12345", "6505551212", "", "test message");
-	kbndg.write(sms);
-    }
-
-    private class ReadThread extends Thread
-    {
-	public void run()
-	{
-	    while (running) {
-		try {
-		    // TODO: Make readNext timeout.
-		    BasicPacket p = readNext();
-		    readQueue.put(p);
-		} catch (IOException ioe) {
-		    //
-		} catch (PacketParseException ppe) {
-		    //
-		} catch (InterruptedException ie) {
-		    //
-		}
-	    }
-	    System.out.println("Exiting ReadThread");
-	}
-    }
-
-    private class WriteThread extends Thread
-    {
-	public void run()
-	{
-	    while (running) {
-		try {
-		    BasicKannelProtocolMessage m = writeQueue.poll(1, TimeUnit.SECONDS);
-		    if (m != null) writeNext(m);
-		} catch (IOException ioe) {
-		    //
-		} catch (InterruptedException ie) {
-		    //
-		}
-	    }
-	    System.out.println("Exiting WriteThread");
-	}
-    }
-
+  }
 }
